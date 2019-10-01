@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 #
 # mat2vtk.py
+#   check Nathan's meshes against C++ version
 
 import numpy as np
-import matplotlib.pyplot as plt
-import os
 import scipy.io as sc
-import struct
-import subprocess
 from evtk.hl import unstructuredGridToVTK
 from evtk.vtk import VtkTriangle
 
@@ -53,7 +50,6 @@ dist = sc.loadmat(apical_name)
 #print('keys:', dist.keys())
 
 apical_data = dist[apical_key]
-#print('apical data shape:')
 #for i in range(7):
 #  print(apical_data[i,0].shape)
 
@@ -68,12 +64,10 @@ dist = sc.loadmat(mesh_name)
 #print('keys:', dist.keys())
 
 verts = dist[verts_key]
-#print('verts data shape:')
 #for i in range(7):
 #  print(verts[i,0].shape)
 
 tris = dist[tris_key]
-#print('tris data shape:')
 #for i in range(7):
 #  print(tris[i,0].shape)
 #  print(np.amin(tris[i,0]))
