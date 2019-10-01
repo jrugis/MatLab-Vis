@@ -86,12 +86,12 @@ print('writing VTU files:')
 for i in range(7):
   tname = aname + str(i+1)
   print(tname)
-  cell1_verts = verts[i,0]
+  cell_verts = verts[i,0]
   t1 = np.nonzero(apical_data[i,0]) # indices of all marked with 45
-  t2 = np.array(t1[0])              # make it numpy array type
-  cell1_tris = tris[i,0][t2,:]      # apical subset of tris (zero based indexing!)
+  t2 = np.array(t1[0])              # convert to numpy array type
+  cell_tris = tris[i,0][t2,:]       # apical subset of tris (zero based indexing!)
 
-  write_tris(tname, cell1_verts, cell1_tris)
+  write_tris(tname, cell_verts, cell_tris)
 
 #---------------------------------------------------
 
